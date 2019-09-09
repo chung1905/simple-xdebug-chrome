@@ -1,12 +1,9 @@
 {
   "name": "Simple xdebug",
   "version": "1.0",
-  "description": "xdebug in one click",
+  "description": "Xdebug in one click",
   "permissions": [
-    "<all_urls>",
     "activeTab",
-    "storage",
-    "tabs",
     "cookies"
   ],
   "background": {
