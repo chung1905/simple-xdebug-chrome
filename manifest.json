@@ -3,6 +3,8 @@
   "version": "1.0",
   "description": "Xdebug in one click",
   "permissions": [
+    "http://*/*",
+    "https://*/*",
     "activeTab",
     "cookies"
   ],

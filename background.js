@@ -49,11 +49,15 @@ var disableXdebug = function (tab) {
     });
 };
 
-var gotCookie = function (cookie) {
-    if (cookie === undefined || cookie.value !== cookieValue) {
-        enableXdebug(this);
+var gotCookie = function (tab, cookie) {
+    if (cookie === undefined) {
+        return;
+    }
+
+    if (cookie === null || cookie.value !== cookieValue) {
+        enableXdebug(tab);
     } else {
-        disableXdebug(this);
+        disableXdebug(tab);
     }
 };
 
@@ -61,7 +65,7 @@ var toggleXdebug = function (tab) {
     cookies.get({
         url: tab.url,
         name: cookieName
-    }, gotCookie.bind(tab));
+    }, gotCookie.bind(null, tab));
 };
 
 var onActionClicked = function (tab) {
